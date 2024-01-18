@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const util = require("util");
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -107,7 +107,7 @@ app.on("close", () => {
   });
 });
 
-app.listen(PORT, (error) => {
+app.listen(PORT, "0.0.0.0", (error) => {
   if (!error) {
     console.log(`Serverul a pornit pe portul ${PORT}.`);
     connection.connect((err) => {
