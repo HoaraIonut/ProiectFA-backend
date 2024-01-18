@@ -21,6 +21,7 @@ const queryAsync = util.promisify(connection.query).bind(connection);
 
 app.post("/login", async (req, res) => {
   try {
+    console.log("S a facut apel la login.")
     const posibilUtilizator = req.body;
     const query = `SELECT count(ID) AS numarInregistrari FROM users WHERE email = ? and parola = ?`;
     const raspunsCerere = await queryAsync(query, [
